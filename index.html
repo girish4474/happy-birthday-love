@@ -15,7 +15,7 @@
       font-family: 'Open Sans', sans-serif;
       color: #e91e63;
       text-align: center;
-      overflow: hidden;
+      overflow: auto; /* FIXED: allow scrolling */
       position: relative;
       background: linear-gradient(135deg, #ffe6f0, #e0f7fa);
     }
@@ -26,6 +26,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      height: auto; /* FIXED */
       padding: 20px;
       position: relative;
       z-index: 2;
@@ -95,13 +96,20 @@
     }
 
     .footer {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
       font-size: 0.9em;
       color: #aaa;
       z-index: 3;
       text-align: center;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    @media (min-height: 700px) {
+      .footer {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+      }
     }
 
     @keyframes fadeIn {
@@ -230,7 +238,7 @@
       <p>Here’s a little gift from my heart, to the girl who owns it. 🎁</p>
       <div class="tap-hint">Tap to continue...</div>
     </div>
-    <div id="step6" class="step">
+    <div id="step6" class="step" style="margin-bottom: 80px;"> <!-- FIXED spacing -->
       <h1>Happy Birthday, Amira 🎂</h1>
       <div class="photo-gallery">
         <img src="amira1.jpeg" alt="Amira 1"/>
@@ -249,7 +257,7 @@
     Your browser does not support the audio element.
   </audio>
 
-  <div class="footer">Made with love, for you, Amira – Your BF Girish(aka Max) 💖</div>
+  <div class="footer">Made with love, for you, Amira – Your BF Girish (aka Max) 💖</div>
 
   <script>
     let currentStep = 0, totalSteps = 6;
