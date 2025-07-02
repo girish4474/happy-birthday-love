@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For My Amira 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
@@ -21,7 +25,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 20px;
       position: relative;
       z-index: 2;
@@ -31,8 +35,9 @@
       display: none;
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      font-size: 1.4em;
-      max-width: 80%;
+      font-size: 1.2em;
+      max-width: 90%;
+      line-height: 1.6em;
     }
 
     .step.active {
@@ -42,7 +47,7 @@
 
     h1 {
       font-family: 'Pacifico', cursive;
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin-bottom: 20px;
     }
 
@@ -55,32 +60,48 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 12px;
       margin-top: 20px;
     }
 
     .photo-gallery img {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    @media (min-width: 600px) {
+      .step {
+        font-size: 1.4em;
+      }
+
+      .photo-gallery img {
+        width: 150px;
+        height: 150px;
+      }
+
+      h1 {
+        font-size: 2.6em;
+      }
     }
 
     .tap-hint {
       font-size: 0.9em;
-      margin-top: 40px;
+      margin-top: 30px;
       color: #999;
       animation: fadeIn 2s ease-in-out forwards;
     }
 
     .footer {
       position: absolute;
-      bottom: 20px;
+      bottom: 10px;
       width: 100%;
       font-size: 0.9em;
       color: #aaa;
       z-index: 3;
+      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -91,10 +112,16 @@
     /* MLP Icons */
     .mlp-icon {
       position: absolute;
-      width: 80px;
+      width: 60px;
       opacity: 0.8;
       animation: float 8s ease-in-out infinite;
       z-index: 2;
+    }
+
+    @media (min-width: 600px) {
+      .mlp-icon {
+        width: 80px;
+      }
     }
 
     @keyframes float {
@@ -172,7 +199,7 @@
   <!-- Sparkle Layer -->
   <div class="sparkle"></div>
 
-  <!-- MLP Icons -->
+  <!-- Floating MLP Icons -->
   <img src="mlp1.png" class="mlp-icon" style="top:10%; left:5%;"/>
   <img src="mlp2.png" class="mlp-icon" style="top:25%; right:10%;"/>
   <img src="mlp3.png" class="mlp-icon" style="bottom:20%; left:15%;"/>
@@ -216,13 +243,13 @@
     </div>
   </div>
 
-  <!-- Music -->
+  <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="perfect.mp3" type="audio/mpeg"/>
     Your browser does not support the audio element.
   </audio>
 
-  <div class="footer">Made with love, for you, Amira – Your person 💖</div>
+  <div class="footer">Made with love, for you, Amira – Your BF Girish(aka Max) 💖</div>
 
   <script>
     let currentStep = 0, totalSteps = 6;
