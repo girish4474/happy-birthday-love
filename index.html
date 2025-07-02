@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>For My Amira 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #e91e63;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #ffe6f0, #e0f7fa);
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      font-size: 1.4em;
+      max-width: 80%;
+    }
+
+    .step.active {
+      display: block;
+      opacity: 1;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .nickname {
+      font-style: italic;
+      color: #ff4d6d;
+    }
+
+    .photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .tap-hint {
+      font-size: 0.9em;
+      margin-top: 40px;
+      color: #999;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 0.9em;
+      color: #aaa;
+      z-index: 3;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* MLP Icons */
+    .mlp-icon {
+      position: absolute;
+      width: 80px;
+      opacity: 0.8;
+      animation: float 8s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    /* Sparkle Overlay */
+    .sparkle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(#ffffff88 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: sparkleMove 60s linear infinite;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    @keyframes sparkleMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      bottom: -30px;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      transform: rotate(45deg);
+      animation: rise 6s linear infinite;
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) rotate(45deg) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body onclick="nextStep()">
+
+  <!-- Sparkle Layer -->
+  <div class="sparkle"></div>
+
+  <!-- MLP Icons -->
+  <img src="mlp1.png" class="mlp-icon" style="top:10%; left:5%;"/>
+  <img src="mlp2.png" class="mlp-icon" style="top:25%; right:10%;"/>
+  <img src="mlp3.png" class="mlp-icon" style="bottom:20%; left:15%;"/>
+  <img src="mlp4.webp" class="mlp-icon" style="bottom:15%; right:5%;"/>
+
+  <div id="container">
+    <div id="step0" class="step active">
+      <h1>Hi Amira ❤️</h1>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step1" class="step">
+      <p>Today, you turn <strong>21</strong>… a beautiful milestone in your beautiful life.</p>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step2" class="step">
+      <p>Even from miles away, my heart is always with you, my <span class="nickname">Mir</span>.</p>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step3" class="step">
+      <p>Four years of love, laughter, growth, and dreaming of forever with you.</p>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step4" class="step">
+      <p>If I had to choose again, I’d still choose you... in every lifetime.</p>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step5" class="step">
+      <p>Here’s a little gift from my heart, to the girl who owns it. 🎁</p>
+      <div class="tap-hint">Tap to continue...</div>
+    </div>
+    <div id="step6" class="step">
+      <h1>Happy Birthday, Amira 🎂</h1>
+      <div class="photo-gallery">
+        <img src="amira1.jpeg" alt="Amira 1"/>
+        <img src="amira2.jpeg" alt="Amira 2"/>
+        <img src="amira3.jpeg" alt="Amira 3"/>
+      </div>
+      <p style="margin-top:20px; font-style:italic; font-size:1.2em;">
+        I love you more than words can hold, more than distance can measure, and forever more than yesterday. 💖
+      </p>
+    </div>
+  </div>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="perfect.mp3" type="audio/mpeg"/>
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="footer">Made with love, for you, Amira – Your person 💖</div>
+
+  <script>
+    let currentStep = 0, totalSteps = 6;
+    let musicStarted = false;
+    let heartInterval;
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    function startHearts() {
+      if (heartInterval) return;
+      heartInterval = setInterval(createHeart, 300);
+    }
+
+    function nextStep() {
+      if (!musicStarted) {
+        const music = document.getElementById('bgMusic');
+        music.play().catch(err => console.log("Music playback blocked:", err));
+        musicStarted = true;
+      }
+
+      if (currentStep < totalSteps) {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        currentStep++;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+
+        if (currentStep === totalSteps) {
+          startHearts();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
